@@ -1,0 +1,40 @@
+2021-11-16 00:00:02 - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default' 
+2021-11-16 00:00:02 - INFO - t.e.s.SpringBootDataJpaEntityApplication - Starting SpringBootDataJpaEntityApplication using Java 1.8.0_301 on DESKTOP-L8GDKU4 with PID 28336 (C:\Users\walid\Desktop\architecture-des-si-2-Homeworks\spring-boot-data-jpa-crud-jpql\target\classes started by walid in C:\Users\walid\Desktop\architecture-des-si-2-Homeworks\spring-boot-data-jpa-crud-jpql) 
+2021-11-16 00:00:02 - INFO - t.e.s.SpringBootDataJpaEntityApplication - No active profile set, falling back to default profiles: default 
+2021-11-16 00:00:02 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2021-11-16 00:00:02 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 4 JPA repository interfaces. 
+2021-11-16 00:00:02 - INFO - o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8089 (http) 
+2021-11-16 00:00:02 - INFO - o.a.catalina.core.StandardService - Starting service [Tomcat] 
+2021-11-16 00:00:02 - INFO - o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.53] 
+2021-11-16 00:00:02 - INFO - o.a.c.c.C.[.[localhost].[/SpringMVC] - Initializing Spring embedded WebApplicationContext 
+2021-11-16 00:00:02 - INFO - o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 297 ms 
+2021-11-16 00:00:02 - INFO - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2021-11-16 00:00:02 - INFO - org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect 
+2021-11-16 00:00:03 - INFO - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2021-11-16 00:00:03 - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2021-11-16 00:00:03 - WARN - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+2021-11-16 00:00:03 - INFO - o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2021-11-16 00:00:03 - INFO - o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8089 (http) with context path '/SpringMVC' 
+2021-11-16 00:00:03 - INFO - t.e.s.SpringBootDataJpaEntityApplication - Started SpringBootDataJpaEntityApplication in 0.911 seconds (JVM running for 1537.954) 
+2021-11-16 00:00:03 - INFO - o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2021-11-16 00:00:11 - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default' 
+2021-11-16 00:00:11 - INFO - t.e.s.SpringBootDataJpaEntityApplication - Starting SpringBootDataJpaEntityApplication using Java 1.8.0_301 on DESKTOP-L8GDKU4 with PID 28336 (C:\Users\walid\Desktop\architecture-des-si-2-Homeworks\spring-boot-data-jpa-crud-jpql\target\classes started by walid in C:\Users\walid\Desktop\architecture-des-si-2-Homeworks\spring-boot-data-jpa-crud-jpql) 
+2021-11-16 00:00:11 - INFO - t.e.s.SpringBootDataJpaEntityApplication - No active profile set, falling back to default profiles: default 
+2021-11-16 00:00:11 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2021-11-16 00:00:11 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 20 ms. Found 4 JPA repository interfaces. 
+2021-11-16 00:00:11 - INFO - o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8089 (http) 
+2021-11-16 00:00:11 - INFO - o.a.catalina.core.StandardService - Starting service [Tomcat] 
+2021-11-16 00:00:11 - INFO - o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.53] 
+2021-11-16 00:00:11 - INFO - o.a.c.c.C.[.[localhost].[/SpringMVC] - Initializing Spring embedded WebApplicationContext 
+2021-11-16 00:00:11 - INFO - o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 254 ms 
+2021-11-16 00:00:11 - INFO - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2021-11-16 00:00:11 - INFO - org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect 
+2021-11-16 00:00:11 - INFO - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2021-11-16 00:00:11 - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2021-11-16 00:00:11 - WARN - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+2021-11-16 00:00:11 - INFO - o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2021-11-16 00:00:11 - INFO - o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8089 (http) with context path '/SpringMVC' 
+2021-11-16 00:00:11 - INFO - t.e.s.SpringBootDataJpaEntityApplication - Started SpringBootDataJpaEntityApplication in 0.786 seconds (JVM running for 1546.535) 
+2021-11-16 00:00:11 - INFO - o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2021-11-16 00:02:03 - INFO - o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested. 
+2021-11-16 00:02:03 - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default' 
