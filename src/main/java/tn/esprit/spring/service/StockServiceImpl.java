@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import lombok.extern.slf4j.Slf4j;
-import tn.esprit.spring.entity.Client;
 import tn.esprit.spring.entity.Stock;
 import tn.esprit.spring.repository.StockRepository;
 
@@ -33,8 +32,8 @@ public class StockServiceImpl implements StockService {
 
 	@Override
 	public Stock updateStock(Stock u) {
-		stockRepository.save(u);
-		return null;
+		Stock stock = stockRepository.save(u);
+		return stock;
 	}
 
 	@Override
@@ -44,7 +43,7 @@ public class StockServiceImpl implements StockService {
 			log.info("In method retrieveStock : ");
 			log.debug("Je veux me connecter à la base : ");
 			stock = stockRepository.findById(id).orElse(null);
-			int i = 1/0;
+			//int i = 1/0;
 			log.debug("le stock : "+stock);
 			log.info("Out method retrieveStock without errors");
 		}

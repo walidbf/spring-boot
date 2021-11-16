@@ -17,20 +17,20 @@ public class ProduitServiceImpl implements ProduitService {
 
 	@Override
 	public List<Produit> retrieveAllProduits() {
-		produitRepository.findAll();
-		return null;
+		List<Produit> produits = (List<Produit>)produitRepository.findAll();
+		return produits;
 	}
 
 	@Override
 	public Produit addProduit(Produit p, Long idRayon, Long idStock) {
-		produitRepository.save(p);
-		return null;
+		Produit produit = produitRepository.save(p);
+		return produit;
 	}
 
 	@Override
 	public Produit retrieveProduit(Long id) {
-		produitRepository.findById(id);
-		return null;
+		Produit produit = produitRepository.findById(id).get();
+		return produit;
 	}
 	
 }
