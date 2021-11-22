@@ -14,6 +14,8 @@ import javax.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -22,6 +24,7 @@ import lombok.ToString;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@RequiredArgsConstructor
 @ToString
 public class Facture implements Serializable {
 
@@ -33,20 +36,13 @@ public class Facture implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idFacture;
-	private float montantRemise;
-	private float montantFacture;
-	private Date dateFacture;
-	private Boolean active;
+	@NonNull private float montantRemise;
+	@NonNull private float montantFacture;
+	@NonNull private Date dateFacture;
+	@NonNull private Boolean active;
 	@ManyToOne
 	Client client;
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="facture")
+	@ToString.Exclude
 	private Set<DetailFacture> detailFacture;
-	public Facture(Long idFacture, float montantRemise, float montantFacture, Date dateFacture, Boolean active) {
-		super();
-		this.idFacture = idFacture;
-		this.montantRemise = montantRemise;
-		this.montantFacture = montantFacture;
-		this.dateFacture = dateFacture;
-		this.active = active;
-	}
 }

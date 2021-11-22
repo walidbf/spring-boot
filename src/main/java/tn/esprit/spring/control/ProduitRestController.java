@@ -11,11 +11,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.swagger.annotations.Api;
 import tn.esprit.spring.entity.Produit;
 import tn.esprit.spring.service.ProduitService;
 
 @RestController
 @RequestMapping("/produit")
+@Api(tags = "Gestion des Produits")
 public class ProduitRestController {
 	@Autowired
 	ProduitService produitService;

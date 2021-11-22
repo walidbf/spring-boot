@@ -10,11 +10,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.swagger.annotations.Api;
 import tn.esprit.spring.entity.Facture;
 import tn.esprit.spring.service.FactureService;
 
 @RestController
 @RequestMapping("/facture")
+@Api(tags = "Gestion des Factures")
 public class FactureRestController {
 	@Autowired
 	FactureService factureService;

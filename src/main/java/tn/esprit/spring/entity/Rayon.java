@@ -13,6 +13,8 @@ import javax.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -21,6 +23,7 @@ import lombok.ToString;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@RequiredArgsConstructor
 @ToString
 public class Rayon implements Serializable{
 	
@@ -29,15 +32,9 @@ public class Rayon implements Serializable{
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private Long idRayon;
-	private String codeRayon;
-	private String libelleRayon;
+	@NonNull private String codeRayon;
+	@NonNull private String libelleRayon;
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="rayon")
+	@ToString.Exclude
 	private Set<Produit> Produits;
-	
-	public Rayon(Long idRayon, String codeRayon, String libelleRayon) {
-		super();
-		this.idRayon = idRayon;
-		this.codeRayon = codeRayon;
-		this.libelleRayon = libelleRayon;
-	}
 }

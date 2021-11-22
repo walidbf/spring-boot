@@ -16,6 +16,8 @@ import javax.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -24,6 +26,7 @@ import lombok.ToString;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@RequiredArgsConstructor
 @ToString
 public class Produit implements Serializable{
 	
@@ -34,24 +37,22 @@ public class Produit implements Serializable{
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private Long idProduit;
-	private String codeProduit;
-	private String libelleProduit;
-	private float prixUnitaire;
+	@NonNull private String codeProduit;
+	@NonNull private String libelleProduit;
+	@NonNull private float prixUnitaire;
 	@ManyToMany(cascade = CascadeType.ALL) 
+	@ToString.Exclude
 	private Set<Fournisseur> produitsfor;
 	@ManyToOne
+	@ToString.Exclude
 	Rayon rayon;
 	@ManyToOne
+	@ToString.Exclude
 	Stock stock;
 	@OneToOne
+	@ToString.Exclude
 	private DetailProduit detailProduit;
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="produit")
+	@ToString.Exclude
 	private Set<DetailFacture> detailFacture;
-	public Produit(Long idProduit, String codeProduit, String libelleProduit, float prixUnitaire) {
-		super();
-		this.idProduit = idProduit;
-		this.codeProduit = codeProduit;
-		this.libelleProduit = libelleProduit;
-		this.prixUnitaire = prixUnitaire;
-	}
 }

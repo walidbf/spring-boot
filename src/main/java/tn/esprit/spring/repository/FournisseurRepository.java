@@ -3,9 +3,9 @@ package tn.esprit.spring.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import tn.esprit.spring.entity.Facture;
+import tn.esprit.spring.entity.Fournisseur;
 
 @Repository
-public interface FactureRepository extends JpaRepository<Facture,Long> {
-	
+public interface FournisseurRepository extends JpaRepository<Fournisseur,Long>{
+
 }

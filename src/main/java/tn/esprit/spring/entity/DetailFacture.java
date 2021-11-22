@@ -31,7 +31,7 @@ public class DetailFacture implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@NonNull private Long idDetailFacture;
+	private Long idDetailFacture;
 	@NonNull private Integer qte;
 	@NonNull private float prixTotal;
 	@NonNull private Integer pourcentageRemise;

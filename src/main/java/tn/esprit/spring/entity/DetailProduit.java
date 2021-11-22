@@ -11,6 +11,8 @@ import javax.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -19,6 +21,7 @@ import lombok.ToString;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@RequiredArgsConstructor
 @ToString
 public class DetailProduit implements Serializable{
 
@@ -30,20 +33,12 @@ public class DetailProduit implements Serializable{
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private Long idDetailProduit;
-	private Date dateCreation;
-	private Date dateDerniereModification;
-	private CategorieProduit categorieProduit;
+	@NonNull private Date dateCreation;
+	@NonNull private Date dateDerniereModification;
+	@NonNull private CategorieProduit categorieProduit;
 	@OneToOne(mappedBy="detailProduit")
 	@ToString.Exclude
 	private Produit produit;
-	public DetailProduit(Long idDetailProduit, Date dateCreation, Date dateDerniereModification,
-			CategorieProduit categorieProduit) {
-		super();
-		this.idDetailProduit = idDetailProduit;
-		this.dateCreation = dateCreation;
-		this.dateDerniereModification = dateDerniereModification;
-		this.categorieProduit = categorieProduit;
-	}
 	
 	
 	

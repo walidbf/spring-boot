@@ -14,6 +14,8 @@ import javax.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -22,6 +24,7 @@ import lombok.ToString;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@RequiredArgsConstructor
 @ToString
 public class Client implements Serializable{
 
@@ -33,33 +36,16 @@ public class Client implements Serializable{
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private Long idClient;
-	private String nom;
-	private String prenom;
-	private Date dateNaissance;
-	private String email;
-	private String password;
-	private CategorieClient categorieClient;
-	private Profession profession;
+	@NonNull private String nom;
+	@NonNull private String prenom;
+	@NonNull private Date dateNaissance;
+	@NonNull private String email;
+	@NonNull private String password;
+	@NonNull private CategorieClient categorieClient;
+	@NonNull private Profession profession;
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="client")
 	@ToString.Exclude
 	private Set<Facture> facture;
-	public Client(Long idClient, String nom, String prenom, Date dateNaissance, String email, String password,
-			CategorieClient categorieClient, Profession profession) {
-		super();
-		this.idClient = idClient;
-		this.nom = nom;
-		this.prenom = prenom;
-		this.dateNaissance = dateNaissance;
-		this.email = email;
-		this.password = password;
-		this.categorieClient = categorieClient;
-		this.profession = profession;
-	}
-	public Client(Long idClient, String nom, String prenom){
-		this.idClient = idClient;
-		this.nom = nom;
-		this.prenom = prenom;
-	}
 
 	
 	

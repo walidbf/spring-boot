@@ -13,15 +13,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import tn.esprit.spring.entity.Client;
 import tn.esprit.spring.service.ClientSerivce;
 
 @RestController
 @RequestMapping("/client")
+@Api(tags = "Gestion des Clients")
 	public class ClientRestController { 
+	
 	@Autowired
 	ClientSerivce clientService;
 	
+	@ApiOperation(value = "Récupérer la liste des clients")
 	// http://localhost:8089/SpringMVC/client/retrieve-all-clients
 	@GetMapping("/retrieve-all-clients")
 	@ResponseBody
@@ -30,6 +35,7 @@ import tn.esprit.spring.service.ClientSerivce;
 	return listClients; 
 	}
 	
+	@ApiOperation(value = "Récupérer un client")
 	// http://localhost:8089/SpringMVC/client/retrieve-client/1
 	@GetMapping("/retrieve-client/{client-id}")
 	@ResponseBody
@@ -37,6 +43,7 @@ import tn.esprit.spring.service.ClientSerivce;
 		return clientService.retrieveClient(clientId);
 	}
 	
+	@ApiOperation(value = "Ajouter un client")
 	// http://localhost:8089/SpringMVC/client/add-client
 	@PostMapping("/add-client")
 	@ResponseBody
@@ -46,6 +53,7 @@ import tn.esprit.spring.service.ClientSerivce;
 		return client;
 	}
 	
+	@ApiOperation(value = "Supprimer un client")
 	// http://localhost:8089/SpringMVC/client/remove-client/{client-id}
 	@DeleteMapping("/remove-client/{client-id}")
 	@ResponseBody

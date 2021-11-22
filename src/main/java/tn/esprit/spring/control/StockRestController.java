@@ -13,11 +13,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.swagger.annotations.Api;
 import tn.esprit.spring.entity.Stock;
 import tn.esprit.spring.service.StockService;
 
 @RestController
 @RequestMapping("/stock")
+@Api(tags = "Gestion de Stock")
 public class StockRestController {
 	@Autowired
 	StockService stockService;
