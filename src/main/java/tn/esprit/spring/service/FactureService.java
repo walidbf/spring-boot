@@ -7,5 +7,6 @@ import tn.esprit.spring.entity.Facture;
 public interface FactureService {
 	List<Facture> retrieveAllFactures();
 	void cancelFacture(Long id);
+	void deleteFacture(Long id);
 	Facture retrieveFacture(Long id);
 }

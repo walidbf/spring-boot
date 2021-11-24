@@ -10,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -35,6 +37,7 @@ public class Rayon implements Serializable{
 	@NonNull private String codeRayon;
 	@NonNull private String libelleRayon;
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="rayon")
+	@JsonIgnore
 	@ToString.Exclude
 	private Set<Produit> Produits;
 }

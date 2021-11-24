@@ -37,4 +37,9 @@ public class FactureServiceImpl implements FactureService{
 		return facture;
 	}
 
+	@Override
+	public void deleteFacture(Long id) {
+		factureRepository.deleteById(id);
+	}
+
 }
