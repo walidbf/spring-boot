@@ -45,12 +45,12 @@ public class ProduitServiceImpl implements ProduitService {
 		Produit produit = produitRepository.save(p);
 		return produit;
 	}
-	
+	/*
 	@Scheduled(fixedRate=3000)//en milliseconde //or fixedDelay 
 	public void fixedRateMethod(){
 		log.info("Method with fixed Rate");
 	}
-
+	*/
 	@Override
 	public Produit retrieveProduit(Long id) {
 		Produit produit = produitRepository.findById(id).get();

@@ -3,6 +3,7 @@ package tn.esprit.spring.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import lombok.extern.slf4j.Slf4j;
@@ -21,6 +22,15 @@ public class StockServiceImpl implements StockService {
 				log.info(" stock : "+stock.toString());
 			}
 			return stocks;
+	}
+	@Scheduled(fixedDelay=60000)//en milliseconde //or fixedRate 
+	public void alertLowStock(){
+		List<Stock> stocks = (List<Stock>) stockRepository.findAll();
+		for (Stock s : stocks)
+		{
+			if (s.getQteStock()<= s.getQteMin())
+				log.info("Attention repture de stock : " +s.getLibelleStock());
+		}
 	}
 
 	@Override
