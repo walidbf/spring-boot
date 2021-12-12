@@ -1,6 +1,7 @@
 package tn.esprit.spring.service;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -9,7 +10,9 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import lombok.extern.slf4j.Slf4j;
+import tn.esprit.spring.entity.Client;
 import tn.esprit.spring.entity.Facture;
+import tn.esprit.spring.repository.ClientRepository;
 import tn.esprit.spring.repository.FactureRepository;
 
 @Service
@@ -17,6 +20,8 @@ import tn.esprit.spring.repository.FactureRepository;
 public class FactureServiceImpl implements FactureService{
 	@Autowired
 	FactureRepository factureRepository;
+	@Autowired
+	ClientRepository clientRepository;
 	@Override
 	public List<Facture> retrieveAllFactures() {
 		List<Facture> factures = (List<Facture>) factureRepository.findAll();
@@ -107,6 +112,23 @@ public class FactureServiceImpl implements FactureService{
 	@Override
 	public void deleteFacture(Long id) {
 		factureRepository.deleteById(id);
+	}
+
+	@Override
+	public List<Facture> getFacturesByClient(Long idClient) {
+		Client client = clientRepository.findById(idClient).orElse(null);
+		List<Facture> factures = new ArrayList<>();
+		factures.addAll(client.getFacture());
+		
+		return factures;
+	}
+
+	@Override
+	public Facture addFacture(Facture f, Long idClient) {
+		Client client = clientRepository.findById(idClient).orElse(null);
+		f.setClient(client);
+		Facture facture = factureRepository.save(f);
+		return facture;
 	}
 
 }

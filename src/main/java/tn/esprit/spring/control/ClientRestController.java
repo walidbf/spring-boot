@@ -1,5 +1,6 @@
 package tn.esprit.spring.control;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import tn.esprit.spring.entity.CategorieClient;
 import tn.esprit.spring.entity.Client;
 import tn.esprit.spring.service.ClientSerivce;
 
@@ -67,4 +69,11 @@ import tn.esprit.spring.service.ClientSerivce;
 	public Client modifyClient(@RequestBody Client client) {
 		return clientService.updateClient(client);
 	}
+	// http://localhost:8089/SpringMVC/client//Chiffre-Affaire-Par-Categorie-Client
+	@PutMapping("/Chiffre-Affaire-Par-Categorie-Client")
+	@ResponseBody
+	public float getChiffreAffaireParCategorieClient( CategorieClient categorieClient, Date startDate, Date endDate) {
+		return clientService.getChiffreAffaireParCategorieClient(categorieClient, startDate, endDate) ;
+	}
+	
 }

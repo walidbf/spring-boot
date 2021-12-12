@@ -1,5 +1,6 @@
 package tn.esprit.spring.control;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,5 +45,12 @@ public class ProduitRestController {
 			Produit produit = produitService.addProduit(p,idRayon,idStock);
 			return produit;
 		}
+		@PostMapping("/Revenu-Brut-Produit/{produit-id}")
+		@ResponseBody
+		public float getRevenuBrutProduit(@PathVariable("produit-id")Long idProduit, Date startDate, Date endDate) 
+		{
+			return getRevenuBrutProduit( idProduit,  startDate,  endDate);
+		}
+		
 		
 }

@@ -23,6 +23,8 @@ public class StockServiceImpl implements StockService {
 			}
 			return stocks;
 	}
+	
+	/*//TP Schedular
 	@Scheduled(fixedDelay=60000)//en milliseconde //or fixedRate 
 	public void alertLowStock(){
 		List<Stock> stocks = (List<Stock>) stockRepository.findAll();
@@ -32,7 +34,8 @@ public class StockServiceImpl implements StockService {
 				log.info("Attention repture de stock : " +s.getLibelleStock());
 		}
 	}
-
+	*/
+	
 	@Override
 	public Stock addStock(Stock s) {
 		log.info("in method add stock : ");
@@ -67,6 +70,17 @@ public class StockServiceImpl implements StockService {
 	@Override
 	public void deleteStock(Long id) {
 		stockRepository.deleteById(id);
+		
+	}
+	@Scheduled(cron = "0 28 21 * * *")
+	@Override
+	public void retrieveStatusStock() {
+		List<Stock> stocks = (List<Stock>) stockRepository.findAll();
+		for (Stock s : stocks)
+		{
+			if (s.getQteStock()<= s.getQteMin())
+				log.info("Attention repture de stock : " +s.getLibelleStock());
+		}
 		
 	}
 	
